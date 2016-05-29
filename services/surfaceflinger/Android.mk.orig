@@ -93,10 +93,6 @@ else
     LOCAL_CFLAGS += -DMAX_VIRTUAL_DISPLAY_DIMENSION=0
 endif
 
-ifeq ($(BOARD_ADRENO_DECIDE_TEXTURE_TARGET),true)
-    LOCAL_CFLAGS += -DDECIDE_TEXTURE_TARGET
-endif
-
 LOCAL_CFLAGS += -fvisibility=hidden -Werror=format
 LOCAL_CFLAGS += -std=c++11
 
@@ -118,7 +114,6 @@ ifeq ($(TARGET_USES_QCOM_BSP), true)
     LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libgralloc
     LOCAL_C_INCLUDES += $(call project-path-for,qcom-display)/libqdutils
     LOCAL_SHARED_LIBRARIES += libqdutils
-    LOCAL_CFLAGS += -DHAS_CONTEXT_PRIORITY
 endif
 
 ifeq ($(TARGET_HAVE_UI_BLUR),true)
